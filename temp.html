@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> About </title>
+    <link rel="stylesheet" href="temp.css">
+  </head>
+
+  <body>
+    <nav id="sidebar">
+        <h2 style="text-align: center;"> Recipφ </h2>
+        <div class="logo-container">
+            <img src="pinkbow.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a class="nav-item" href="dashboard.html"> Home </a></li>
+            <li><a class="nav-item" href="temp.html"> Add A Recipe </a></li>
+            <li><a class="nav-item" href="temp2.html"> Recipe </a></li>
+            <li><a class="nav-item" href="purchase.html"> Purchase </a></li>
+            <li><a class="nav-item" href="login.html"> Log Out </a></li>
+        </ul>
+    </nav>
+
+    <form action="temp.php" method="post" id="insert-recipe" enctype="multipart/form-data" novalidate>
+      
+      <h2> Add a New Recipe </h2>
+      
+      <div class="form-group">
+        <label for="recipename"> Recipe Name </label>
+        <input type="text" id="recipename" name="recipename" required placeholder="Enter recipe name">
+      </div>
+
+      <div class="form-group">
+        <label for="recipedescrip"> Recipe Description </label>
+        <textarea id="recipedescrip" name="recipedescrip" rows="3" placeholder="Provide a short description of the recipe" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="recipesteps"> Steps </label>
+        <textarea id="recipesteps" name="recipesteps" rows="8" placeholder="Describe the recipe steps" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="recipe_image"> Upload Recipe Image </label>
+        <input type="file" id="recipe_image" name="recipe_image" accept="image/*">
+      </div>
+
+      <fieldset class="form-group">
+        <legend> Difficulty Level </legend>
+        <label for="beginner">
+          <input type="radio" id="beginner" name="difficulty" value="Beginner" required>
+          Beginner
+        </label><br>
+        
+        <label for="novice">
+          <input type="radio" id="novice" name="difficulty" value="Novice">
+          Novice
+        </label><br>
+
+        <label for="expert">
+          <input type="radio" id="expert" name="difficulty" value="Expert">
+          Expert
+        </label>
+      </fieldset>
+
+      <fieldset class="form-group">
+        <legend>Dish Type</legend>
+        <label for="pastry">
+          <input type="checkbox" id="pastry" name="dish_types[]" value="Pastry">
+          Pastry
+        </label><br>
+
+        <label for="cultural">
+          <input type="checkbox" id="cultural" name="dish_types[]" value="Cultural Dessert">
+          Cultural Dessert
+        </label><br>
+
+        <label for="vegetarian">
+          <input type="checkbox" id="vegetarian" name="dish_types[]" value="Vegetarian">
+          Vegetarian
+        </label><br>
+
+        <label for="dessert">
+          <input type="checkbox" id="dessert" name="dish_types[]" value="Dessert">
+          Dessert
+        </label><br>
+
+        <label for="main_course">
+          <input type="checkbox" id="main_course" name="dish_types[]" value="Main Course">
+          Main Course
+        </label>
+      </fieldset>
+
+      <div class="form-group">
+        <button type="submit"> Publish Recipe </button>
+      </div>
+    </form>
+
+  </body>
+</html>

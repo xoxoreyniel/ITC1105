@@ -1,0 +1,99 @@
+html, body{ 
+        .recipe-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 20px;            
+            padding: 20px;
+            justify-items: center;
+        }
+
+        .recipe-box {
+            width: 100%; 
+            border: 2px solid black;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: transparent;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .recipe-box img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+        }
+
+        .recipe-box h2 {
+            margin: 10px;
+            text-align: center;
+            font-size: 18px;
+            color: hotpink;
+        }
+
+        .recipe-box p {
+            margin: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .recipe-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .recipe-box.active .hidden {
+            display: block;
+        }
+
+        .search-container {
+            background-color: transparent;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sort-container {
+            width: 100%; 
+            margin-top: 50%;
+            border: 2px solid black;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: transparent;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        #sidebar {
+            background-image: url(bg1.jpg);
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 300px;
+            height: 100%;
+            border-right: solid;
+            border-color: black;
+        }
+            
+        #sidebar ul {
+            padding: 0;
+        }
+
+        #sidebar li {
+            color: black;
+            border-top: 1px solid black;
+        }
+
+        #sidebar .nav-item {
+            display: block;
+            padding: 10px 30px;
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}

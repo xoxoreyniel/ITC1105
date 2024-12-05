@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title> Purchase </title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" type="text/css" href="purchase.css">
+  </head>
+
+  <body>
+    <div class="search-container">
+      <form action="/search" method="GET">
+        <input type="text" id="search" name="query" placeholder="search here" style="font-style: italic;">
+        <button type="submit"> Search </button>
+      </form>
+    </div>
+
+    <nav id="sidebar">
+        <h2 style="text-align: center;"> Recipφ </h2>
+        <div class="logo-container">
+            <img src="pinkbow.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a class="nav-item" href="dashboard.html">Home</a></li>
+            <li><a class="nav-item" href="temp.html"> Add A Recipe </a></li>
+            <li><a class="nav-item" href="temp2.html">Recipe</a></li>
+            <li><a class="nav-item" href="purchase.html">Purchase</a></li>
+            <li><a class="nav-item" href="dashboard.html">Back</a></li>
+            <li><a class="nav-item" href="login.html">Log Out</a></li>
+        </ul>
+    </nav>
+
+    <div class="product-container">
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/MH6565DIS.png" class="product-image">
+          <h3 class="product-name"> LG 25L Smart Inverter NeoChef Microwave Oven MH6565DIS </h3>
+          <p class="product-price" style="text-align: center;"> ₱8495 </p> 
+
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="0" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱0 </p>
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/MG30T5018CC.png" class="product-image">
+          <h3 class="product-name"> Samsung MG30T5018CC/TC 30 Liters Microwave Oven </h3>
+          <p class="product-price" style="text-align: center;"> ₱8495 </p> 
+
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="0" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱0 </p>
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/MC35R8088LC.png" class="product-image">
+          <h3 class="product-name"> Samsung MC35R8088LC 35 Liters Smart Microwave Oven </h3>
+          <p class="product-price" style="text-align: center;"> ₱24995 </p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="0" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱0 </p> 
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/MWX-203.jpg" class="product-image">
+          <h3 class="product-name"> Whirlpool MWX-203 BL 20 Liters Microwave Oven </h3>
+          <p class="product-price" style="text-align: center;"> ₱4698 </p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="0" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱0 </p> 
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/AHOT-6272.png" class="product-image">
+          <h3 class="product-name"> American Heritage AHOT-6272 13.0 Liters Electric Oven </h3>
+          <p class="product-price" style="text-align: center;"> ₱3199 </p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="0" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱0 </p> 
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/EO-26RCDG.jpg" class="product-image">
+          <h3 class="product-name"> 3D EO-26RCDG 26 Liters Electric Oven </h3>
+          <p class="product-price" style="text-align: center;"> ₱4409 </p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="0" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱0 </p> 
+        </div>
+      </div>
+
+       <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/SL155-40WT_FINAL.png" class="product-image">
+          <h3 class="product-name"> La Germania SL155 40WT Electric Oven </h3>
+          <p class="product-price" style="text-align: center;"> ₱9100 </p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="0" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱0 </p> 
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/20_F9S05E10-BLS.png" class="product-image">
+          <h3 class="product-name"> Fabriano F9S05E10-BLS 90cm Electric Cooking Range </h3>
+          <p class="product-price" style="text-align: center;"> ₱70995 </p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="0" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱0 </p> 
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/04_OT-101_EK-124.png" class="product-image">
+          <h3 class="product-name"> Asahi OT-101 10L Oven Toaster + EK-124 1.2L Electric Kettle BUNDLE </h3>
+          <p class="product-price" style="text-align: center;"> ₱2450 </p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="0" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱0</p> 
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/BDICSL08-480x480.png" class="product-image">
+          <h3 class="product-name"> Brikk BDICSL08 Double Induction Cooker </h3>
+          <p class="product-price" style="text-align: center;"> ₱6799 </p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="0" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱0 </p> 
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/08_-BSME048BL.png" class="product-image">
+          <h3 class="product-name"> Brikk BSME048BL 48L Digital Oven </h3>
+          <p class="product-price" style="text-align: center;"> ₱7495 </p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="0" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱0</p> 
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/02_BHHM-7339C-1.png" class="product-image">
+          <h3 class="product-name"> Brikk BHHM-7339C Hand Mixer with Mixing Bowl </h3>
+          <p class="product-price" style="text-align: center;"> ₱2999 </p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="0" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱0</p> 
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/SM-50RHK.png" class="product-image">
+          <h3 class="product-name"> Cuisinart SM-50RHK 5.2 Liters Stand Mixer </h3>
+          <p class="product-price" style="text-align: center;"> ₱23795 </p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="0" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱0</p> 
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/SM-50BLHK_02.png" class="product-image">
+          <h3 class="product-name"> Cuisinart SM-50BLHK 5.2 Liters Stand Mixer </h3>
+          <p class="product-price" style="text-align: center;"> ₱23795 </p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="0" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱0</p> 
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/MK-GH3.png" class="product-image">
+          <h3 class="product-name"> Panasonic MK-GH3 175w Hand Mixer </h3>
+          <p class="product-price" style="text-align: center;"> ₱2695 </p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="0" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱0</p> 
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/MK-GB3.png" class="product-image">
+          <h3 class="product-name"> Panasonic MK-GB3 3.0 Liters Stand Mixer </h3>
+          <p class="product-price" style="text-align: center;"> ₱2940 </p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="0" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱0 </p> 
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cart-container">
+      <button class="cart-btn" onclick="window.location.href ='checkout.html';">
+        <span class="cart-icon"> 🛒 </span>
+        <span id="cart-count"> 0 </span>
+      </button>
+      <div id="cart-summary" class="cart-summary">
+        <p> Total: <span id="total-price"> 0.00 </span></p>
+      </div>
+    </div>
+
+    <script src="purchase.js"></script>
+
+  </body>
+</html>

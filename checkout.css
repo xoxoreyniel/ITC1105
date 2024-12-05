@@ -1,0 +1,146 @@
+html, body{ 
+	body{ 
+		background-color: #fff8fb;
+		font-family: Playfair Display, serif;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+		margin: 0;
+	}
+
+	#sidebar {
+		background-image: url(bg1.jpg);
+ 		position: fixed;
+		top: 0px;
+  		left: 0px;
+  		width: 300px;
+  		height: 100%;
+  		border-right: solid;
+  		border-color: black;
+	}
+	
+	#sidebar ul {
+		padding: 0;
+	}
+
+	#sidebar li {
+  		color: black;
+  		border-top: 1px solid black;
+  	}
+
+	#sidebar .nav-item {
+  		display: block;
+  		padding: 10px 30px;
+  		color: black;
+  		text-decoration: none;
+  		cursor: pointer;
+  	}
+
+  	.checkout-container {
+	    background-color: white;
+	    padding: 20px;
+	    max-width: 800px;
+	    margin: 0 auto;
+	    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	    border-radius: 8px;
+	}
+
+	h1 {
+	    text-align: center;
+	    margin-bottom: 20px;
+	    color: #333;
+	}
+
+	h3 {
+	    margin-bottom: 20px;
+	    color: black;
+	}
+
+	.total-amount {
+	    font-weight: bold;
+	    font-size: 18px;
+	    color: black; 
+	}
+
+	#total-amount-container {
+	    position: absolute;
+	    bottom: 20px; 
+	    left: 20px; 
+	    font-weight: bold;
+	    font-size: 18px;
+	    color: black; 
+	}
+
+	.order-images-container {
+	    display: flex;
+	    justify-content: space-between;
+	    margin-bottom: 20px;
+	}
+
+	.order-image {
+	    width: 30%;
+	    height: auto;
+	    border-radius: 8px;
+	    object-fit: cover;
+	}
+
+	#order-summary {
+	    width: 100%;
+	    border-collapse: collapse;
+	    margin-bottom: 20px;
+	}
+
+	#order-summary th, #order-summary td {
+	    padding: 10px;
+	    text-align: left;
+	    border: 1px solid #ddd;
+	}
+
+	#order-summary th {
+	    background-color: transparent;
+	}
+
+	#order-items td {
+	    text-align: center;
+	}
+
+	form {
+	    margin-top: 30px;
+	}
+
+	input[type="password"] {
+	    padding: 8px;
+	    font-size: 16px;
+	    width: 100%;
+	    margin-bottom: 20px;
+	    border: 1px solid black;
+	    border-radius: 5px;
+	}
+
+	input[type="submit"] {
+	    padding: 10px 20px;
+	    background-color: whitesmoke;
+	    color: black;
+	    font-size: 16px;
+	    border: 2px black;
+	    border-radius: 5px;
+	    cursor: pointer;
+	    width: 100%;
+	}
+
+	input[type="submit"]:hover {
+	    background-color: hotpink;
+	}
+
+	#message {
+	    margin-top: 20px;
+	    color: darkred;
+	    text-align: center;
+	}
+
+	.product-name {
+		color: black;
+   		font-size: 16px;
+	}
+}

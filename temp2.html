@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Recipe List </title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="recipe.css">
+</head>
+<body>
+    <nav id="sidebar">
+        <h2 style="text-align: center;"> Recipφ </h2>
+        <div class="logo-container">
+            <img src="pinkbow.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a class="nav-item" href="dashboard.html"> Home </a></li>
+            <li><a class="nav-item" href="temp.html"> Add A Recipe </a></li>
+            <li><a class="nav-item" href="recipe.html"> Recipe </a></li>
+            <li><a class="nav-item" href="purchase.html"> Purchase </a></li>
+            <li><a class="nav-item" href="login.html"> Log Out </a></li>
+        </ul>
+    </nav>
+
+    <div class="search-container">
+        <form onsubmit="event.preventDefault(); fetchRecipes();">
+            <input type="text" id="search" name="query" placeholder="Search here" style="font-style: italic;">
+            <button type="submit"> Search </button>
+        </form>
+    </div>
+
+    <div class="sort-container" style="position: absolute; margin-bottom: 36.5%; margin-right: 25%;">
+        <p> Filter by difficulty </p>
+        <form id="difficulty-form">
+            <label for="beginner">
+                <input type="checkbox" id="beginner" name="difficulty[]" value="Beginner"> Beginner
+            </label>
+            <br>
+            <label for="novice">
+                <input type="checkbox" id="novice" name="difficulty[]" value="Novice"> Novice
+            </label>
+            <br>
+            <label for="expert">
+                <input type="checkbox" id="expert" name="difficulty[]" value="Expert"> Expert
+            </label>
+        </form>
+    </div>
+
+    <div class="sort-container" style="position: absolute; margin-bottom: 34%; margin-right: 45%;">
+        <p> Filter by dish type </p>
+        <form id="dish-type-form">
+            <label for="pastry">
+                <input type="checkbox" id="pastry" name="dish_types[]" value="Pastry"> Pastry
+            </label>
+            <br>
+            <label for="cultural">
+                <input type="checkbox" id="cultural" name="dish_types[]" value="Cultural Dish"> Cultural Dish
+            </label>
+            <br>
+            <label for="vegetarian">
+                <input type="checkbox" id="vegetarian" name="dish_types[]" value="Vegetarian"> Vegetarian
+            </label>
+            <br>
+            <label for="dessert">
+                <input type="checkbox" id="dessert" name="dish_types[]" value="Dessert"> Dessert
+            </label>
+            <br>
+            <label for="main_course">
+                <input type="checkbox" id="main_course" name="dish_types[]" value="Main Course"> Main Course
+            </label>
+        </form>
+    </div>
+
+    <button onclick="fetchRecipes()" style="position: fixed; margin-bottom: 20%; margin-right: 50%;"> Filter </button>
+
+    <div class="recipe-container" id="recipe-container">
+        <!-- Recipes will be populated here by JavaScript -->
+    </div>
+
+    <script src="temp2.js"> </script>
+
+</body>
+</html>

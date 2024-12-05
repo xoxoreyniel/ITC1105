@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="purchase.css">
+
+    <link rel="stylesheet" href="checkout.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <nav id="sidebar">
+        <h2 style="text-align: center;"> Recipφ </h2>
+        <div class="logo-container">
+            <img src="pinkbow.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a class="nav-item" href="dashboard.html">Home</a></li>
+            <li><a class="nav-item" href="temp2.html">Recipe</a></li>
+            <li><a class="nav-item" href="purchase.html">Purchase</a></li>
+            <li><a class="nav-item" href="purchase.html">Back</a></li>
+            <li><a class="nav-item" href="login.html">Log Out</a></li>
+        </ul>
+    </nav>
+
+    <h1 style="position: fixed; margin-left: 20%; margin-bottom: 40%;"> Order Invoice </h1>
+
+    <h3 style="position: fixed; margin-bottom: 30%; margin-right: 40%;"> Review Your Order </h3>
+
+    <div id="order-details-container" style="margin-left: 0;">
+    </div>
+
+    <table id="order-summary" style="margin-left: 25%; margin-bottom: 170px; margin-right: 50px;">
+        <thead>
+            <tr>
+                <th style="text-align: center;"> Product </th>
+                <th style="text-align: center;"> Quantity </th>
+                <th style="text-align: center;"> Total </th>
+            </tr>
+        </thead>
+
+        <tbody id="order-items">
+        <!-- Dynamic order rows will be inserted here -->
+        </tbody>
+
+    </table>
+
+    <p style="position: absolute; margin-top: 25%; margin-right: 37.3%; font-size: 20px;"><strong> Total Amount: </strong> <span id="total-amount"></span></p>
+
+    <form id="checkout-form" method="POST" style="position: absolute; margin-top: 35%; margin-right: 31.8%;">
+        <label for="password"><strong>  Enter your password to continue check out: </strong></label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="hidden" id="order-details" name="order_details">
+        <input type="submit" value="Confirm Purchase">
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+       // Get the order details from localStorage
+    const orderDetails = JSON.parse(localStorage.getItem('orderDetails')) || [];
+    const totalAmount = orderDetails.reduce((total, item) => total + item.total_price, 0);
+
+    // Display the total amount on the page
+    document.getElementById('total-amount').textContent = `₱${totalAmount.toFixed(2)}`;
+
+    // Populate the order details table
+    const orderItemsContainer = document.getElementById('order-items');
+    orderDetails.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${item.product_name}</td>
+            <td>${item.quantity}</td>
+            <td>₱${item.price.toFixed(2)}</td>
+        `;
+        orderItemsContainer.appendChild(row);
+    });
+
+    // Set the order details to a hidden input field
+    document.getElementById('order-details').value = JSON.stringify(orderDetails);
+
+    // Handle the form submission with AJAX
+    $('#checkout-form').submit(function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const password = $('#password').val();
+        const orderDetails = $('#order-details').val();
+
+        // Send data to the server using AJAX
+        $.ajax({
+            url: 'process_order.php', // PHP file to process the order
+            type: 'POST',
+            data: {
+                password: password,
+                order_details: orderDetails
+            },
+            success: function(response) {
+                $('#message').text(response); // Show the response message
+
+                // If the order is successful, redirect to the purchase page after a delay
+                if (response.includes('Order placed successfully')) {
+                    setTimeout(function() {
+                        window.location.href = 'purchase.html'; // Redirect to purchase page
+                    }, 2000); // Wait 2 seconds before redirecting
+                }
+            },
+            error: function() {
+                $('#message').text("There was an error processing your order.");
+            }
+        });
+    });
+    </script>
+</body>
+</html>
